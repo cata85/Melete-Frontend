@@ -1,12 +1,3 @@
-@keyframes info-slide {
-  from {
-    right: -408px;
-  }
-  to {
-    right: 0;
-  }
-}
-
 body {
   font-family: sans-serif;
   overflow-x: hidden;
@@ -30,66 +21,4 @@ body {
 .highlight {
   background: rgba(52, 152, 219, 0.25);
   position: absolute;
-}
-
-#info {
-  position: absolute;
-  top: 0;
-  right: -408px;
-  bottom: 41px;
-  width: 400px;
-  border-left: 8px solid #f0f0f0;
-  background: #fff;
-  overflow-y: scroll;
-  z-index: 1000;
-}
-
-#info-inner {
-  padding: 32px;
-}
-
-.info-slide-in {
-  animation: info-slide 0.4s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-}
-
-.info-slide-out {
-  animation: info-slide 0.4s cubic-bezier(0.86, 0, 0.07, 1) reverse forwards;
-}
-
-#controls {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 21px;
-  background: #dcdcdc;
-  padding: 10px;
-  font-size: 21px;
-  color: #333;
-  text-align: center;
-}
-
-#progress {
-  position: absolute;
-  z-index: 500;
-  bottom: 0;
-  left: 0;
-  width: 0vw;
-  height: 41px;
-  background: #03A9F4;
-}
-
-#aoide {
-  position: absolute;
-  bottom: 44px;
-  right: 6px;
-  font-family: sans-serif;
-  color: rgba(100, 100, 100, 0.35);
-  user-select: none;
-}
-
-.control {
-  position: relative;
-  z-index: 1000;
-  cursor: pointer;
 }
