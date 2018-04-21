@@ -22,9 +22,9 @@ body {
 
 .ace_editor {
     border: 1px solid lightgray;
-    margin: auto;
-    height: 200px;
-    width: 80%;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 40%;
   }
 
 .highlight {
