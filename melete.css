@@ -4,24 +4,22 @@ body {
 }
 
 .container {
-    position: relative;
-}
-
-#source {
-    top: 10px;
-    left: 10px;
+    float: left;
 }
 
 .code-container {
-    position: absolute;
+    border: 1px solid lightgray;
+    margin: 10px;
+    float: left;
 }
 
-.ace_editor {
-    border: 1px solid lightgray;
-    margin-top: 10px;
-    margin-left: 10px;
+.main-code-container {
     width: 40%;
-  }
+}
+
+[id^="func"] {
+  width: 30%;
+}
 
 .highlight {
   background: rgba(52, 152, 219, 0.25);

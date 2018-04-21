@@ -1,33 +1,17 @@
-var subDivCount = 1;
-var top = 50;
-var left = 600;
+var numChilds = 0;
+var childs = [];
 
 
-function displayFunction(code) {
-    // Temporary, may not need subDivCount or divID!
-    var div = document.createElement("div");
-    div.id = "func" + subDivCount.toString();
-    div.style.border = "1px solid lightgray";
-    div.style.marginTop = top + "px";
-    div.style.marginLeft = left + "px";
-    div.style.width = "30%";
-    document.body.insertBefore(div, null);
-    subDivCount++;
-    top+= 1000;
-    code = "function reverse(str) {\n" +
-           "    if (str === \"\") {\n" +
-           "        return\"\";\n" +
-           "    }else{\n" +
-           "        return reverse(str.substr(i)) + str[0];\n" +
-           "    }\n" +
-           "}";
-    var tempEditor = ace.edit(div.id);
-    tempEditor.getSession().setMode('ace/mode/javascript');
-    tempEditor.setFontSize(12);
-    tempEditor.setOption("maxLines", 10);
-    tempEditor.session.setValue(code);
-    var lineNumber = tempEditor.session.getLength();
-    tempEditor.gotoLine(lineNumber);
+function childFunc(code) {
+    if (numChilds == 0) {
+        childs.push(new CodeNode(null));
+    }
+    else {
+        childs.push(new CodeNode(childs[numChilds - 1]));
+    }
+    numChilds++;
+
+    childs[numChilds - 1].makeEditor(code);
 }
 
 
@@ -38,7 +22,10 @@ var editor = ace.edit('source');
 // Initialize ace
 editor.getSession().setMode('ace/mode/javascript');
 editor.setFontSize(12);
-editor.setOption("maxLines", 100);
+editor.setOptions({
+    maxLines: 100,
+    minLines: 30
+});
 editor.session.setValue(
                         "function reverse(str) {\n" +
                         "    if (str === \"\") {\n" +
