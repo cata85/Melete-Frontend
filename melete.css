@@ -3,12 +3,17 @@ body {
   overflow-x: hidden;
 }
 
+.container {
+    position: relative;
+}
+
 #source {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 10px;
-  left: 0;
+    top: 10px;
+    left: 10px;
+}
+
+.code-container {
+    position: absolute;
 }
 
 .ace_editor {
